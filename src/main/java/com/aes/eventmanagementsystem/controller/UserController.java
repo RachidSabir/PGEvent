@@ -1,8 +1,6 @@
 package com.aes.eventmanagementsystem.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Controller;
@@ -10,10 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.aes.eventmanagementsystem.dto.NotificationDto;
 import com.aes.eventmanagementsystem.model.Event;
+import com.aes.eventmanagementsystem.model.Notification;
 import com.aes.eventmanagementsystem.model.User;
 import com.aes.eventmanagementsystem.service.IEventService;
 import com.aes.eventmanagementsystem.service.INotificationService;
@@ -91,11 +91,16 @@ public class UserController {
         User user = getUserFromSession(session);
 
         ModelAndView modelAndView = new ModelAndView("profile.html");
+
         modelAndView.addObject("user", user);
 
         // Fetch ordered events from the database
         List<Event> orderedEvents = eventService.findEventsByUserIdSortedByEventDate(user.getUserId());
+        List<Object[]> eventIdsWithUnreadNotificationCounts = notificationService
+                .findEventIdsWithUnreadNotificationCounts();
+
         modelAndView.addObject("orderedEvents", orderedEvents);
+        modelAndView.addObject("eventIdsWithUnreadNotificationCounts", eventIdsWithUnreadNotificationCounts);
 
         return modelAndView;
     }
@@ -182,6 +187,14 @@ public class UserController {
         Event event = eventService.fetchEvent(eventId);
 
         HandleUserEventInteraction(UserEventInteractionType.REMOVE, user, event);
+        return modelAndView;
+    }
+
+    @GetMapping("/getNotifications")
+    public ModelAndView fetchNotificationsByEventId(@RequestParam int eventId, Model model) {
+        ModelAndView modelAndView = new ModelAndView("redirect:/displayProfile");
+        List<Notification> notifications = notificationService.fetchNotificationsByEventId(eventId);
+        model.addAttribute("notifications", notifications);
         return modelAndView;
     }
 

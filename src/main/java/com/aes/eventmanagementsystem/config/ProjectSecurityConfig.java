@@ -22,6 +22,8 @@ public class ProjectSecurityConfig {
                 .requestMatchers("/joinEvent").authenticated()
                 .requestMatchers("/leaveEvent").authenticated()
                 .requestMatchers("/createNotification").authenticated()
+                .requestMatchers("/getNotifications").authenticated()
+                .requestMatchers("/api/**").authenticated()
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 .requestMatchers("/", "/home").permitAll()
                 .requestMatchers("/login").permitAll()

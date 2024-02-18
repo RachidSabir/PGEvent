@@ -28,6 +28,8 @@ public class Notification extends BaseEntity {
 
         private String notificationContent;
 
+        private boolean isRead;
+
         @ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.MERGE, CascadeType.PERSIST,
                         CascadeType.REFRESH,
                         CascadeType.DETACH }, targetEntity = User.class)

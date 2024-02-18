@@ -1,13 +1,9 @@
 package com.aes.eventmanagementsystem.service.impl;
 
 import java.util.List;
-import java.util.Optional;
-
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.aes.eventmanagementsystem.dto.NotificationDto;
-import com.aes.eventmanagementsystem.exception.DataAlreadyExistsException;
 import com.aes.eventmanagementsystem.exception.ResourceNotFoundExcepiton;
 import com.aes.eventmanagementsystem.mapper.NotificationMapper;
 import com.aes.eventmanagementsystem.model.Event;
@@ -43,7 +39,9 @@ public class NotificationServiceImpl implements INotificationService {
                                 .findByNotificationContentAndUserAndEvent(notificationDto.getNotificationContent(),
                                                 user, event);
                 // todo send comm
-
+                if (notification == null)
+                        notification = NotificationMapper.mapToNotification(notificationDto, new Notification());
+                notification.setRead(false);
                 notification.setUser(user);
                 notification.setEvent(event);
                 Notification savedNotification = notificationRepository.save(notification);
@@ -103,6 +101,17 @@ public class NotificationServiceImpl implements INotificationService {
         public List<Notification> fetchNotificationsByEventId(int eventId) {
                 List<Notification> notificationList = notificationRepository.findNotificationsByEventId(eventId);
                 return notificationList;
+        }
+
+        /**
+         * Get a list which contains eventId - unread notification count for all
+         * notifications
+         * 
+         * @return List of eventId - unread notification count pair object
+         */
+        @Override
+        public List<Object[]> findEventIdsWithUnreadNotificationCounts() {
+                return notificationRepository.findEventIdsWithUnreadNotificationCounts();
         }
 
 }

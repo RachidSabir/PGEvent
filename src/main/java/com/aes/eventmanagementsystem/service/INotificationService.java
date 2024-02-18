@@ -50,4 +50,12 @@ public interface INotificationService {
      * @param notificationId
      */
     void deleteNotifications(int notificationId);
+
+    /**
+     * Get a list which contains eventId - unread notification count for all
+     * notifications
+     * 
+     * @return List of eventId - unread notification count pair object
+     */
+    List<Object[]> findEventIdsWithUnreadNotificationCounts();
 }
