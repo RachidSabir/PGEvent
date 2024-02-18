@@ -97,7 +97,7 @@ public class UserController {
         // Fetch ordered events from the database
         List<Event> orderedEvents = eventService.findEventsByUserIdSortedByEventDate(user.getUserId());
         List<Object[]> eventIdsWithUnreadNotificationCounts = notificationService
-                .findEventIdsWithUnreadNotificationCounts();
+                .findEventIdsWithUnreadNotificationCounts(user.getUserId());
 
         modelAndView.addObject("orderedEvents", orderedEvents);
         modelAndView.addObject("eventIdsWithUnreadNotificationCounts", eventIdsWithUnreadNotificationCounts);

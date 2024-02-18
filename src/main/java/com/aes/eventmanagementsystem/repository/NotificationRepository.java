@@ -19,6 +19,11 @@ public interface NotificationRepository extends JpaRepository<Notification, Inte
     @Query("SELECT n FROM Notification n JOIN n.event e WHERE e.eventId = :eventId")
     List<Notification> findNotificationsByEventId(@Param("eventId") int eventId);
 
-    @Query("SELECT e.eventId, COUNT(n.notificationId) FROM Notification n JOIN n.event e GROUP BY e.eventId")
-    List<Object[]> findEventIdsWithUnreadNotificationCounts();
+    @Query("SELECT e.eventId, COUNT(n.notificationId) " +
+            "FROM Notification n " +
+            "JOIN n.event e " +
+            "JOIN e.participants p " +
+            "WHERE p.userId = :userId " +
+            "GROUP BY e.eventId")
+    List<Object[]> findEventIdsWithUnreadNotificationCounts(@Param("userId") int userId);
 }

@@ -57,5 +57,5 @@ public interface INotificationService {
      * 
      * @return List of eventId - unread notification count pair object
      */
-    List<Object[]> findEventIdsWithUnreadNotificationCounts();
+    List<Object[]> findEventIdsWithUnreadNotificationCounts(int userId);
 }

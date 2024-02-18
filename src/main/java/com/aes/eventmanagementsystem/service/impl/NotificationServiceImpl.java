@@ -110,8 +110,8 @@ public class NotificationServiceImpl implements INotificationService {
          * @return List of eventId - unread notification count pair object
          */
         @Override
-        public List<Object[]> findEventIdsWithUnreadNotificationCounts() {
-                return notificationRepository.findEventIdsWithUnreadNotificationCounts();
+        public List<Object[]> findEventIdsWithUnreadNotificationCounts(int userId) {
+                return notificationRepository.findEventIdsWithUnreadNotificationCounts(userId);
         }
 
 }
