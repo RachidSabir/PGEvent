@@ -23,6 +23,6 @@ The Event System Management project aims to provide a comprehensive solution for
 - MySQL: Reliable relational database management system for data storage.
 - Maven: Dependency management tool for Java projects.
 
-##License
+## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
