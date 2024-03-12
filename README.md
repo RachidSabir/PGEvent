@@ -1,4 +1,4 @@
-# Event System Management
+# Event Management System
 
 Welcome to the Event System Management project! This project is an open-source event management system developed using the Spring Boot framework.
 
