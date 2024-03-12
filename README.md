@@ -1,10 +1,10 @@
 # Event Management System
 
-Welcome to the Event System Management project! This project is an open-source event management system developed using the Spring Boot framework.
+Welcome to the Event Management System project! This project is an open-source event management system developed using the Spring Boot framework.
 
 ## Description
 
-The Event System Management project aims to provide a comprehensive solution for managing events and participants. It includes features such as event display, participant management, user authentication, and more.
+The Event Management System project aims to provide a comprehensive solution for managing events and participants. It includes features such as event display, participant management, user authentication, and more.
 
 ## Features
 
