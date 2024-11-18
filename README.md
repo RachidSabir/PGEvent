@@ -22,7 +22,3 @@ The Event Management System project aims to provide a comprehensive solution for
 - Thymeleaf: Modern server-side Java template engine for web and standalone environments.
 - MySQL: Reliable relational database management system for data storage.
 - Maven: Dependency management tool for Java projects.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.

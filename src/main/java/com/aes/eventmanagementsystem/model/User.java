@@ -19,6 +19,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table; // <-- Ajouté ici
 import jakarta.persistence.Transient;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -30,6 +31,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
+@Table(name = "\"user\"")
 @Getter
 @Setter
 @ToString
