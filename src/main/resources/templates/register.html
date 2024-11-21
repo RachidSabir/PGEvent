@@ -4,28 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Event Management System</title>
+    <title>Inscription - Plateforme de Gestion d'Événements</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="pt-5">
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Event Management System</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="/">Plateforme de Gestion d'Événements</a>
     </nav>
 
     <!-- Register Section -->
-    <section id="register" class="d-flex align-items-center">
-        <div class="container">
+    <section id="register" class="d-flex align-items-center" style="background-image: url('/assets/images/log3.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 100vh;">
+        <div class="container mt-5 mb-4">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-body">
-                            <h2 class="text-center mb-4">Register</h2>
+                            <h2 class="text-center mb-4">Inscription</h2>
                             <ul>
                                 <li class="alert alert-danger" role="alert"
                                     th:each="error : ${#fields.errors('user.*')}" th:text="${error}" />
@@ -35,12 +35,12 @@
                                 <div class="form-group">
                                     <label for="username">Username</label>
                                     <input type="text" class="form-control" th:field="*{username}"
-                                        placeholder="Enter your username">
+                                        placeholder="Username">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email</label>
                                     <input type="email" class="form-control" th:field="*{email}"
-                                        placeholder="Enter email">
+                                        placeholder="Email">
                                 </div>
                                 <div class="form-group">
                                     <label for="confirm-email">Confirm Email</label>
@@ -57,10 +57,10 @@
                                     <input type="password" class="form-control" th:field="*{confirmPwd}"
                                         placeholder="Confirm password">
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-block">Register</button>
+                                <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
                             </form>
                             <div class="text-center mt-3">
-                                <p>Already have an account? <a th:href="@{/login}">Login here</a></p>
+                                <p>Vous avez déjà un compte?<a th:href="@{/login}"> Connectez-vous ici</a></p>
                             </div>
                         </div>
                     </div>
