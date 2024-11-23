@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme de Gestion d'Événements</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font awesome : icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+
+    <style>
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column">
+
+    <!-- Header -->
+    <div th:replace="~{layouts/header :: header}">...</div>
+
+    <!-- Hero Section -->
+    <div class="container-fluid text-center text-white d-flex flex-column justify-content-center align-items-center"
+        style="height: 100vh; background: url('/assets/images/bghome.png') no-repeat center center/cover;">
+        <h1 class="display-5" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);">Bienvenue sur la Plateforme de Gestion d'Événements !</h1>
+        <h3 class="display-5" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);">Votre solution tout-en-un pour organiser et gérer vos événements.</h3>
+        <a href="#about" class="btn btn-success btn-lg mt-3">En savoir plus</a>
+    </div>
+
+
+    <!-- About Section in a Card -->
+    <div id="about" class="container py-5">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="text-center mb-4">À Propos</h2>
+                <p class="text-center mb-5">
+                    La Plateforme de Gestion d'Événements est conçue pour simplifier la planification, l'organisation et la gestion
+                    des événements. Avec une interface intuitive et des fonctionnalités puissantes, vous pouvez créer, gérer et suivre
+                    tous les aspects de vos événements en toute simplicité.
+                </p>
+                <div class="row">
+                    <!-- Card 1: Planification -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body text-center">
+                                <h5 class="card-title"><i class="fas fa-calendar-alt"></i> Planification</h5>
+                                <p class="card-text">
+                                    Simplifiez la planification de vos événements grâce à des outils intuitifs qui vous permettent de créer des calendriers détaillés et de coordonner facilement avec vos équipes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2: Organisation -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body text-center">
+                                <h5 class="card-title"><i class="fas fa-tasks"></i> Organisation</h5>
+                                <p class="card-text">
+                                    Gérez chaque détail de l'événement, de la réservation des lieux à la coordination avec les partenaires, pour garantir un déroulement sans accroc.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3: Gestion d'Événements -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-success text-white">
+                            <div class="card-body text-center">
+                                <h5 class="card-title"><i class="fas fa-chart-line"></i> Gestion d'Événements</h5>
+                                <p class="card-text">
+                                    Suivez en temps réel la participation, gérez les inscriptions, et accédez à des rapports détaillés pour mesurer le succès de vos événements.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section in a Card -->
+      <section class="section bottom-faq-sec py-5 mb-5">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Questions Fréquemment Posées</h2>
+                    <div class="faq-list">
+                        <!-- FAQ 1 -->
+                        <div class="faq-item border-bottom py-3">
+                            <h3 class="d-flex justify-content-between align-items-center">
+                                <span>Qu'est-ce qu'un logiciel de gestion d'événements ?</span>
+                                <button class="btn btn-link p-0 text-decoration-none font-weight-bold toggle-icon" data-toggle="collapse" data-target="#faq1" aria-expanded="false" aria-controls="faq1">+</button>
+                            </h3>
+                            <div id="faq1" class="collapse">
+                                <p class="mt-3">Un logiciel de gestion d'événements est une solution technologique complète conçue pour aider les organisateurs à planifier différents types d'événements, tels que des conférences, des ateliers et des salons professionnels, qu'ils soient en présentiel, en ligne ou hybrides.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="faq-item border-bottom py-3">
+                            <h3 class="d-flex justify-content-between align-items-center">
+                                <span>Comment un logiciel de gestion d'événements aide-t-il à organiser des événements réussis ?</span>
+                                <button class="btn btn-link p-0 text-decoration-none font-weight-bold toggle-icon" data-toggle="collapse" data-target="#faq2" aria-expanded="false" aria-controls="faq2">+</button>
+                            </h3>
+                            <div id="faq2" class="collapse">
+                                <p class="mt-3">Un logiciel de gestion d'événements offre de nombreux avantages : gain de temps, engagement des participants, personnalisation et analyses basées sur les données.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="faq-item border-bottom py-3">
+                            <h3 class="d-flex justify-content-between align-items-center">
+                                <span>Quelles sont les fonctionnalités clés d'un logiciel de gestion d'événements ?</span>
+                                <button class="btn btn-link p-0 text-decoration-none font-weight-bold toggle-icon" data-toggle="collapse" data-target="#faq3" aria-expanded="false" aria-controls="faq3">+</button>
+                            </h3>
+                            <div id="faq3" class="collapse">
+                                <p class="mt-3">Les fonctionnalités incluent : gestion des billets, marketing, engagement des participants, création de sites web et formulaires personnalisables.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- JavaScript for FAQ behavior -->
+      <script>
+        // Get all FAQ items
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        // Add event listeners to each toggle button
+        faqItems.forEach(item => {
+            const button = item.querySelector('.toggle-icon');
+            const collapse = item.querySelector('.collapse');
+
+            button.addEventListener('click', () => {
+                // Toggle icon between + and -
+                if (collapse.classList.contains('show')) {
+                    button.textContent = '+';
+                } else {
+                    button.textContent = '-';
+                }
+
+                // Collapse other FAQs
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        const otherButton = otherItem.querySelector('.toggle-icon');
+                        const otherCollapse = otherItem.querySelector('.collapse');
+                        otherButton.textContent = '+';
+                        otherCollapse.classList.remove('show');
+                    }
+                });
+            });
+        });
+      </script>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-3 fixed-bottom">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 - Plateforme de Gestion d'Événements - Rachid SABIR</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS et jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
