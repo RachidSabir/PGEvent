@@ -23,7 +23,7 @@ public class ProjectSecurityConfig {
                 .requestMatchers("/createNotification").authenticated()
                 .requestMatchers("/getNotifications").authenticated()
                 .requestMatchers("/api/**").authenticated()
-                .requestMatchers("/admin/**").hasRole("ADMIN")
+                .requestMatchers("/admin/**").hasRole("Admin")
                 .requestMatchers("/", "/home").permitAll()
                 .requestMatchers("/login").permitAll()
                 .requestMatchers("/assets/**").permitAll()

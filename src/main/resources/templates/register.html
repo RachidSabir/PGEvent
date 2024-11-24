@@ -28,7 +28,8 @@
                             <h2 class="text-center mb-4">Inscription</h2>
                             <ul>
                                 <li class="alert alert-danger" role="alert"
-                                    th:each="error : ${#fields.errors('user.*')}" th:text="${error}" />
+                                    th:each="error : ${#fields.errors('user.*')}" th:text="${error}">
+                                </li>
                             </ul>
                             <form th:action="@{/public/createUser}" method="post" class="signin-form"
                                 th:object="${user}">

@@ -16,7 +16,7 @@
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" > -->
 
-    <link rel="stylesheet" href="/assets/css/style-starter.css">
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -25,7 +25,7 @@
     <!-- header -->
     <div th:replace="~{layouts/header :: header}">...</div>
 
-    <div class="site-section mt-5 container">
+    <div class="site-section mt-5 container py-5">
 
         <div class="table-responsive-class">
 
@@ -91,11 +91,11 @@
                                 </div>
                             </div>
 
-                            <!-- Update Button -->
+                            <!-- Update Button
                             <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                                 th:attr="data-target='#updateEventModal' + ${eventMap[0].eventId}">
                                 Update Event
-                            </button>
+                            </button>-->
 
                             <!-- Modal -->
                             <div class="modal fade" th:id="'updateEventModal' + ${eventMap[0].eventId}" tabindex="-1"
@@ -126,16 +126,16 @@
                                                     <input type="text" name="eventLocation" class="form-control"
                                                         th:value="${eventMap[0].eventLocation}" />
                                                 </div>
-                                                <button type="submit" class="btn btn-info">Update</button>
+                                                <!-- <button type="submit" class="btn btn-info">Update</button> -->
                                             </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <a th:href="@{/deleteEvent(eventId=${eventMap[0].eventId})}" class="btn btn-danger btn-sm">
+                            <!-- <a th:href="@{/deleteEvent(eventId=${eventMap[0].eventId})}" class="btn btn-danger btn-sm">
                                 Delete Event
-                            </a>
+                            </a> -->
                         </td>
                     </tr>
                 </tbody>
