@@ -26,35 +26,21 @@
 <body class="bg-light">
     <!-- header -->
     <div th:replace="~{layouts/header :: header}">...</div>
-    <div class="bg-dark">
+    <div class="bg-dark" style="min-height: 100vh;">
         <div class="container mt-5  text-light">
             <!-- Welcome block -->
-            <section class="py-1" id="contact">
+            <section class="py-5" id="contact">
                 <div class="py-md-1 py-1">
                     <div class="title-main mb-md-1 mb-1">
-                        <h3 class="title-style" th:text="${'Welcome - ' + username + '  ' + roles}"></h3>
+                        <h3 class="title-style" th:text="${'Welcome - ' + username + ' - dans votre Dashboard'}"></h3> <!-- + '  ' + roles-->
                     </div>
                 </div>
             </section>
-            <h1 class="mb-4 dashboard-title text-light">Dashboard</h1>
             <div class="container py-md-5 py-4">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row m-t-25">
-                            <div class="col-sm-6 col-lg-3">
-                                <a th:href="@{/displayProfile}" class="btn btn-dark text-decoration-none">
-                                    <div class="overview-item overview-item--c4">
-                                        <div class="overview__inner">
-                                            <div class="overview-box clearfix">
-                                                <div class="text">
-                                                    <h2>Profile</h2>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-sm-6 col-lg-3" sec:authorize="hasRole('ROLE_ADMIN')">
+                            <div class="col-sm-6 col-lg-3" sec:authorize="hasRole('ROLE_Admin')">
                                 <a th:href="@{/admin/displayEvents}" class="btn btn-dark text-decoration-none">
                                     <div class="overview-item overview-item--c2">
                                         <div class="overview__inner">
@@ -67,7 +53,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-sm-6 col-lg-3" sec:authorize="hasRole('ROLE_USER')">
+                            <div class="col-sm-6 col-lg-3" sec:authorize="hasRole('ROLE_User')">
                                 <a th:href="@{/displayEvents}" class="btn btn-dark text-decoration-none">
                                     <div class="overview-item overview-item--c2">
                                         <div class="overview__inner">
@@ -80,7 +66,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-sm-6 col-lg-3" sec:authorize="hasRole('ROLE_ADMIN')">
+                            <div class="col-sm-6 col-lg-3" sec:authorize="hasRole('ROLE_Admin')">
                                 <a th:href="@{/admin/displayNotifications}" class="btn btn-dark text-decoration-none">
                                     <div class="overview-item overview-item--c3">
                                         <div class="overview__inner">
