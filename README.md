@@ -1,3 +1,7 @@
+# Rachid Sabir
+
+Author
+
 # Event Management System
 
 Welcome to the Event Management System project! This project is an open-source event management system developed using the Spring Boot framework.
